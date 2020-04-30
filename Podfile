@@ -10,6 +10,7 @@ pod 'Firebase/Analytics'
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'Firebase'
+pod 'Kingfisher'
 
   target 'instagramMarch10Tests' do
     inherit! :search_paths
