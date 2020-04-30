@@ -6,7 +6,10 @@ target 'instagramMarch10' do
   use_frameworks!
 
   # Pods for instagramMarch10
-
+pod 'Firebase/Analytics'
+pod 'FirebaseAuth'
+pod 'FirebaseFirestore'
+pod 'Firebase'
 
   target 'instagramMarch10Tests' do
     inherit! :search_paths
