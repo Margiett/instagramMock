@@ -12,4 +12,10 @@ import Kingfisher
 
 class UserPostCell: UICollectionViewCell {
     
+    @IBOutlet weak var postImageView: UIImageView!
+    
+    public func configureCell(post: Post) {
+        
+    }
+    
 }
