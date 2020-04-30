@@ -96,9 +96,6 @@
 		9F4763CE2418188E006FC91B = {
 			isa = PBXGroup;
 			children = (
-				9FF4019E245B92DA0070C0BF /* Extensions */,
-				9FF4019B245B90D30070C0BF /* New Group */,
-				9FF40198245B8FF20070C0BF /* Views */,
 				9F4763D92418188E006FC91B /* instagramMarch10 */,
 				9F4763F024181891006FC91B /* instagramMarch10Tests */,
 				9F4763D82418188E006FC91B /* Products */,
@@ -119,6 +116,9 @@
 		9F4763D92418188E006FC91B /* instagramMarch10 */ = {
 			isa = PBXGroup;
 			children = (
+				9FF4019E245B92DA0070C0BF /* Extensions */,
+				9FF4019B245B90D30070C0BF /* New Group */,
+				9FF40198245B8FF20070C0BF /* Views */,
 				9F4763DA2418188E006FC91B /* AppDelegate.swift */,
 				9F4763DC2418188E006FC91B /* SceneDelegate.swift */,
 				9F4763DE2418188E006FC91B /* ViewController.swift */,
