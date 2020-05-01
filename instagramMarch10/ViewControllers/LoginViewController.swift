@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
+    
     private var authSession = AuthenticationSession()
     
     override func viewDidLayoutSubviews() {

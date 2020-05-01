@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="J5k-wW-G0w">
             <objects>
-                <viewController id="aHG-rf-2ra" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="aHG-rf-2ra" customClass="LoginViewController" customModule="instagramMarch10" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h1K-hC-a9Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,6 +41,9 @@
                                 <state key="normal" title="Log in ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logInButtonPressed:" destination="aHG-rf-2ra" eventType="touchUpInside" id="fAM-Ct-Ghf"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or" translatesAutoresizingMaskIntoConstraints="NO" id="qBL-AM-eOg">
                                 <rect key="frame" x="20" y="615" width="374" height="46"/>
@@ -89,15 +92,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sPl-Jm-qRQ"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Xg0-t5-b0b" id="VXo-Qx-Uin"/>
+                        <outlet property="logInButton" destination="7xD-qb-z4x" id="6Td-UK-BQ3"/>
+                        <outlet property="passwordTextField" destination="8yA-0q-V3u" id="7Zh-s8-WUi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3i-0F-LwV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="186.95652173913044" y="120.53571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="Zei-aZ-VcT">
             <objects>
-                <viewController id="3sk-4X-PcA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" id="3sk-4X-PcA" customClass="SignUpViewController" customModule="instagramMarch10" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Zd-g0-e9O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,6 +157,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="logInButtonPressed:" destination="3sk-4X-PcA" eventType="touchUpInside" id="rqV-aq-tbx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -178,6 +189,11 @@
                         <viewLayoutGuide key="safeArea" id="2NR-c0-eoc"/>
                     </view>
                     <navigationItem key="navigationItem" id="zN3-bM-Q4e"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="LhI-oc-Mgb" id="TyS-rx-s3q"/>
+                        <outlet property="passwordTextField" destination="jPt-tM-pGJ" id="P82-29-vjl"/>
+                        <outlet property="signUpButton" destination="egb-oT-LkR" id="FWz-Ys-M6h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAD-hb-zJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

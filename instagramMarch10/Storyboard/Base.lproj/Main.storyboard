@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="1598.5507246376812" y="-280.58035714285711"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="kmf-W6-wl6">
             <objects>
-                <tabBarController id="Hby-ib-M8O" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="Hby-ib-M8O" customClass="MainTabBarController" customModule="instagramMarch10" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NMM-4S-gTP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

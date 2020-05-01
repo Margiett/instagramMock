@@ -9,15 +9,14 @@
 /* Begin PBXBuildFile section */
 		2137E2572D05843DD2D18BAB /* Pods_instagramMarch10Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4EE1780249005765B5FA3AF /* Pods_instagramMarch10Tests.framework */; };
 		44107D7CFF5B9FBFAEA78662 /* Pods_instagramMarch10.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9A22ABD2AC31A6F2C1F9F2 /* Pods_instagramMarch10.framework */; };
+		9F032B01245CB86C00A5A5EF /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F032B00245CB86C00A5A5EF /* HomePageViewController.swift */; };
 		9F4763DB2418188E006FC91B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4763DA2418188E006FC91B /* AppDelegate.swift */; };
 		9F4763DD2418188E006FC91B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4763DC2418188E006FC91B /* SceneDelegate.swift */; };
-		9F4763DF2418188E006FC91B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4763DE2418188E006FC91B /* ViewController.swift */; };
 		9F4763E22418188E006FC91B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4763E02418188E006FC91B /* Main.storyboard */; };
 		9F4763E424181891006FC91B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F4763E324181891006FC91B /* Assets.xcassets */; };
 		9F4763E724181891006FC91B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4763E524181891006FC91B /* LaunchScreen.storyboard */; };
 		9F4763F224181891006FC91B /* instagramMarch10Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4763F124181891006FC91B /* instagramMarch10Tests.swift */; };
 		9F4763FD24181D3B006FC91B /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4763FC24181D3B006FC91B /* LoginStoryboard.storyboard */; };
-		9F4763FF24182ECB006FC91B /* mainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4763FE24182ECB006FC91B /* mainView.storyboard */; };
 		9F96C584245B3EBA00DD811B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F96C583245B3EBA00DD811B /* GoogleService-Info.plist */; };
 		9FF4019A245B90230070C0BF /* UserPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF40199245B90230070C0BF /* UserPostCell.swift */; };
 		9FF4019D245B90E50070C0BF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4019C245B90E50070C0BF /* Model.swift */; };
@@ -49,10 +48,10 @@
 		5F0B4F6924DD22F835361333 /* Pods-instagramMarch10.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramMarch10.release.xcconfig"; path = "Target Support Files/Pods-instagramMarch10/Pods-instagramMarch10.release.xcconfig"; sourceTree = "<group>"; };
 		60ECAE0198EC0CF5BF9A9253 /* Pods-instagramMarch10.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramMarch10.debug.xcconfig"; path = "Target Support Files/Pods-instagramMarch10/Pods-instagramMarch10.debug.xcconfig"; sourceTree = "<group>"; };
 		9418A7B1F89F4687730340B7 /* Pods-instagramMarch10Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramMarch10Tests.release.xcconfig"; path = "Target Support Files/Pods-instagramMarch10Tests/Pods-instagramMarch10Tests.release.xcconfig"; sourceTree = "<group>"; };
+		9F032B00245CB86C00A5A5EF /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		9F4763D72418188E006FC91B /* instagramMarch10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagramMarch10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4763DA2418188E006FC91B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F4763DC2418188E006FC91B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9F4763DE2418188E006FC91B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F4763E12418188E006FC91B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F4763E324181891006FC91B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F4763E624181891006FC91B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,7 +60,6 @@
 		9F4763F124181891006FC91B /* instagramMarch10Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagramMarch10Tests.swift; sourceTree = "<group>"; };
 		9F4763F324181891006FC91B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F4763FC24181D3B006FC91B /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
-		9F4763FE24182ECB006FC91B /* mainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mainView.storyboard; sourceTree = "<group>"; };
 		9F96C583245B3EBA00DD811B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9FF40199245B90230070C0BF /* UserPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostCell.swift; sourceTree = "<group>"; };
 		9FF4019C245B90E50070C0BF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -109,6 +107,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9F032AFF245CB73000A5A5EF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9F4763E02418188E006FC91B /* Main.storyboard */,
+				9F4763FC24181D3B006FC91B /* LoginStoryboard.storyboard */,
+				9F4763E524181891006FC91B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		9F4763CE2418188E006FC91B = {
 			isa = PBXGroup;
 			children = (
@@ -132,20 +140,16 @@
 		9F4763D92418188E006FC91B /* instagramMarch10 */ = {
 			isa = PBXGroup;
 			children = (
+				9F032AFF245CB73000A5A5EF /* Storyboard */,
 				9FF401B3245CA2FA0070C0BF /* TabbarController */,
 				9FF401B0245CA2530070C0BF /* ViewControllers */,
 				9FF401A7245B9BE60070C0BF /* FirebaseService */,
 				9FF4019E245B92DA0070C0BF /* Extensions */,
-				9FF4019B245B90D30070C0BF /* New Group */,
+				9FF4019B245B90D30070C0BF /* Model */,
 				9FF40198245B8FF20070C0BF /* Views */,
 				9F4763DA2418188E006FC91B /* AppDelegate.swift */,
 				9F4763DC2418188E006FC91B /* SceneDelegate.swift */,
-				9F4763DE2418188E006FC91B /* ViewController.swift */,
-				9F4763E02418188E006FC91B /* Main.storyboard */,
-				9F4763FC24181D3B006FC91B /* LoginStoryboard.storyboard */,
-				9F4763FE24182ECB006FC91B /* mainView.storyboard */,
 				9F4763E324181891006FC91B /* Assets.xcassets */,
-				9F4763E524181891006FC91B /* LaunchScreen.storyboard */,
 				9F4763E824181891006FC91B /* Info.plist */,
 			);
 			path = instagramMarch10;
@@ -171,12 +175,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		9FF4019B245B90D30070C0BF /* New Group */ = {
+		9FF4019B245B90D30070C0BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				9FF4019C245B90E50070C0BF /* Model.swift */,
 			);
-			path = "New Group";
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9FF4019E245B92DA0070C0BF /* Extensions */ = {
@@ -204,6 +208,7 @@
 			children = (
 				9FF401B4245CA3A70070C0BF /* LoginViewController.swift */,
 				9FF401B6245CA6A10070C0BF /* SignUpViewController.swift */,
+				9F032B00245CB86C00A5A5EF /* HomePageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -313,7 +318,6 @@
 			files = (
 				9F4763E724181891006FC91B /* LaunchScreen.storyboard in Resources */,
 				9F4763E424181891006FC91B /* Assets.xcassets in Resources */,
-				9F4763FF24182ECB006FC91B /* mainView.storyboard in Resources */,
 				9F4763E22418188E006FC91B /* Main.storyboard in Resources */,
 				9F4763FD24181D3B006FC91B /* LoginStoryboard.storyboard in Resources */,
 			);
@@ -402,7 +406,6 @@
 				9FF401AF245CA2230070C0BF /* EmptyView.swift in Sources */,
 				9FF401A6245B98370070C0BF /* AuthenticationSession.swift in Sources */,
 				9FF401B5245CA3A70070C0BF /* LoginViewController.swift in Sources */,
-				9F4763DF2418188E006FC91B /* ViewController.swift in Sources */,
 				9FF401A2245B972A0070C0BF /* AlertExtensions.swift in Sources */,
 				9F4763DB2418188E006FC91B /* AppDelegate.swift in Sources */,
 				9FF401AD245CA05F0070C0BF /* FeedCell.swift in Sources */,
@@ -411,6 +414,7 @@
 				9FF401B7245CA6A10070C0BF /* SignUpViewController.swift in Sources */,
 				9FF401A0245B93060070C0BF /* UIViewControllerExtensions.swift in Sources */,
 				9FF401B2245CA29E0070C0BF /* MainTabBarController.swift in Sources */,
+				9F032B01245CB86C00A5A5EF /* HomePageViewController.swift in Sources */,
 				9F4763DD2418188E006FC91B /* SceneDelegate.swift in Sources */,
 				9FF401A4245B97620070C0BF /* UIImageExtension.swift in Sources */,
 				9FF401AB245BA1470070C0BF /* DatabaseService.swift in Sources */,
