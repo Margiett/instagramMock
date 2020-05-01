@@ -42,3 +42,24 @@ class HomePageViewController: UIViewController {
 
 }
 
+extension HomePageViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return feed.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath) as? FeedCell else {
+            fatalError("could not downcast to feedCell")
+        }
+        let post = feed[indexPath.row]
+        cell.configureCell(post: post)
+        
+        return cell
+    }
+}
+
+extension HomePageViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let maxSize = UIScreen.main.bounds
+        return CGSize(width: maxSize.width, height: maxSize.height * 0.50)
+    }
+}
