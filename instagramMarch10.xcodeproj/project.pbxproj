@@ -24,6 +24,8 @@
 		9FF401A0245B93060070C0BF /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4019F245B93060070C0BF /* UIViewControllerExtensions.swift */; };
 		9FF401A2245B972A0070C0BF /* AlertExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF401A1245B972A0070C0BF /* AlertExtensions.swift */; };
 		9FF401A4245B97620070C0BF /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF401A3245B97620070C0BF /* UIImageExtension.swift */; };
+		9FF401A6245B98370070C0BF /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF401A5245B98370070C0BF /* AuthenticationSession.swift */; };
+		9FF401A9245B9C3F0070C0BF /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF401A8245B9C3F0070C0BF /* StorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		9FF4019F245B93060070C0BF /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		9FF401A1245B972A0070C0BF /* AlertExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtensions.swift; sourceTree = "<group>"; };
 		9FF401A3245B97620070C0BF /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		9FF401A5245B98370070C0BF /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
+		9FF401A8245B9C3F0070C0BF /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		D22228BFC59F914E114418D9 /* Pods-instagramMarch10Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramMarch10Tests.debug.xcconfig"; path = "Target Support Files/Pods-instagramMarch10Tests/Pods-instagramMarch10Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4EE1780249005765B5FA3AF /* Pods_instagramMarch10Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instagramMarch10Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +120,7 @@
 		9F4763D92418188E006FC91B /* instagramMarch10 */ = {
 			isa = PBXGroup;
 			children = (
+				9FF401A7245B9BE60070C0BF /* FirebaseService */,
 				9FF4019E245B92DA0070C0BF /* Extensions */,
 				9FF4019B245B90D30070C0BF /* New Group */,
 				9FF40198245B8FF20070C0BF /* Views */,
@@ -166,6 +171,15 @@
 				9FF401A3245B97620070C0BF /* UIImageExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9FF401A7245B9BE60070C0BF /* FirebaseService */ = {
+			isa = PBXGroup;
+			children = (
+				9FF401A5245B98370070C0BF /* AuthenticationSession.swift */,
+				9FF401A8245B9C3F0070C0BF /* StorageService.swift */,
+			);
+			path = FirebaseService;
 			sourceTree = "<group>";
 		};
 		B73680E73988D26FC58BB4CA /* Pods */ = {
@@ -351,9 +365,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FF4019D245B90E50070C0BF /* Model.swift in Sources */,
+				9FF401A6245B98370070C0BF /* AuthenticationSession.swift in Sources */,
 				9F4763DF2418188E006FC91B /* ViewController.swift in Sources */,
 				9FF401A2245B972A0070C0BF /* AlertExtensions.swift in Sources */,
 				9F4763DB2418188E006FC91B /* AppDelegate.swift in Sources */,
+				9FF401A9245B9C3F0070C0BF /* StorageService.swift in Sources */,
 				9FF4019A245B90230070C0BF /* UserPostCell.swift in Sources */,
 				9FF401A0245B93060070C0BF /* UIViewControllerExtensions.swift in Sources */,
 				9F4763DD2418188E006FC91B /* SceneDelegate.swift in Sources */,
