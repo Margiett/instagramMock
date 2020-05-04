@@ -103,7 +103,7 @@
         <!--Instagram-->
         <scene sceneID="RiI-0i-6Z4">
             <objects>
-                <viewController id="8NS-Hj-OWI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePageViewController" id="8NS-Hj-OWI" customClass="HomePageViewController" customModule="instagramMarch10" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H8m-wC-7yh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,6 +185,9 @@
                         <viewLayoutGuide key="safeArea" id="G0R-SN-FwV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Instagram" id="lBg-Ta-GcO"/>
+                    <connections>
+                        <outlet property="homePageCollectionView" destination="n0n-1Z-sFd" id="gVh-xC-7m7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHi-va-kSH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

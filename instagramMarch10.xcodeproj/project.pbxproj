@@ -10,6 +10,8 @@
 		2137E2572D05843DD2D18BAB /* Pods_instagramMarch10Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4EE1780249005765B5FA3AF /* Pods_instagramMarch10Tests.framework */; };
 		44107D7CFF5B9FBFAEA78662 /* Pods_instagramMarch10.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9A22ABD2AC31A6F2C1F9F2 /* Pods_instagramMarch10.framework */; };
 		9F032B01245CB86C00A5A5EF /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F032B00245CB86C00A5A5EF /* HomePageViewController.swift */; };
+		9F032B03245CC65700A5A5EF /* AddPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F032B02245CC65700A5A5EF /* AddPictureViewController.swift */; };
+		9F032B05245CC9F400A5A5EF /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F032B04245CC9F400A5A5EF /* ShareViewController.swift */; };
 		9F4763DB2418188E006FC91B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4763DA2418188E006FC91B /* AppDelegate.swift */; };
 		9F4763DD2418188E006FC91B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4763DC2418188E006FC91B /* SceneDelegate.swift */; };
 		9F4763E22418188E006FC91B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4763E02418188E006FC91B /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		60ECAE0198EC0CF5BF9A9253 /* Pods-instagramMarch10.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramMarch10.debug.xcconfig"; path = "Target Support Files/Pods-instagramMarch10/Pods-instagramMarch10.debug.xcconfig"; sourceTree = "<group>"; };
 		9418A7B1F89F4687730340B7 /* Pods-instagramMarch10Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramMarch10Tests.release.xcconfig"; path = "Target Support Files/Pods-instagramMarch10Tests/Pods-instagramMarch10Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9F032B00245CB86C00A5A5EF /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		9F032B02245CC65700A5A5EF /* AddPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPictureViewController.swift; sourceTree = "<group>"; };
+		9F032B04245CC9F400A5A5EF /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		9F4763D72418188E006FC91B /* instagramMarch10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagramMarch10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4763DA2418188E006FC91B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F4763DC2418188E006FC91B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 				9FF401B4245CA3A70070C0BF /* LoginViewController.swift */,
 				9FF401B6245CA6A10070C0BF /* SignUpViewController.swift */,
 				9F032B00245CB86C00A5A5EF /* HomePageViewController.swift */,
+				9F032B02245CC65700A5A5EF /* AddPictureViewController.swift */,
+				9F032B04245CC9F400A5A5EF /* ShareViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -408,7 +414,9 @@
 				9FF401B5245CA3A70070C0BF /* LoginViewController.swift in Sources */,
 				9FF401A2245B972A0070C0BF /* AlertExtensions.swift in Sources */,
 				9F4763DB2418188E006FC91B /* AppDelegate.swift in Sources */,
+				9F032B05245CC9F400A5A5EF /* ShareViewController.swift in Sources */,
 				9FF401AD245CA05F0070C0BF /* FeedCell.swift in Sources */,
+				9F032B03245CC65700A5A5EF /* AddPictureViewController.swift in Sources */,
 				9FF401A9245B9C3F0070C0BF /* StorageService.swift in Sources */,
 				9FF4019A245B90230070C0BF /* UserPostCell.swift in Sources */,
 				9FF401B7245CA6A10070C0BF /* SignUpViewController.swift in Sources */,

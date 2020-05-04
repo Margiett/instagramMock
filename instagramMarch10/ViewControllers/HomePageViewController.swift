@@ -23,22 +23,33 @@ class HomePageViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        listener = Firestore.firestore().collection(DatabaseService.postCollecion).addSnapshotListener({ [weak self] (snapshot, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Try again later", message: "\(error.localizedDescription)")
+                }
+            } else if let snapshot = snapshot {
+                let posts = snapshot.documents.map {
+                    Post($0.data()) }
+                self?.feed = posts
+                }
+            })
+        }
+        
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        listener?.remove()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        homePageCollectionView.delegate = self
+        homePageCollectionView.dataSource = self
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }
 
