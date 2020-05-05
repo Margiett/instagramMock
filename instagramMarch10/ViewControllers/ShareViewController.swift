@@ -32,30 +32,37 @@ class ShareViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         uploadPhoto.image = selectedImage
-
-        // Do any additional setup after loading the view.
     }
     
+    //MARK: Share Button needs to fix this error
     @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
         guard let caption = writeCaptionText.text, !caption.isEmpty else {
-            captionLabel.textColor = #colorLiteral(red: 0.83209306, green: 0.5366696119, blue: 0.8646921515, alpha: 1)
-            captionLabel.text = "Caption is Required !"
-            print("testing share button was pressed ")
+            captionLabel.textColor = .red
+            captionLabel.text = "A caption is required in order to post"
             return
         }
-        let resizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: uploadPhoto.bounds)
         
-        db.createPost(caption: caption) { [weak self] (result) in
+        let reSizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: uploadPhoto.bounds)
+        
+        db.createPost(caption: caption) { (result) in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self?.showAlert(title: "Error creating item", message: error.localizedDescription)
+                    self.showAlert(title: "Error creating item", message: error.localizedDescription)
                 }
-            case.success(let post):
-                self?.uploadingPicture(image: resizedImage, postId: postId)
+            case .success(let postId):
+                self.uploadingPicture(image: reSizedImage, postId: postId)
             }
         }
+        
     }
+
+
+
+
+
+
+
     private func uploadingPicture(image: UIImage, postId: String) {
         
         storageService.uploadPhoto(postId: postId, image: image) { (result) in
