@@ -85,7 +85,7 @@ class EditProfileViewController: UIViewController {
         storageService.uploadPhoto(userId: user.uid, image: resizedImage) { [weak self] (result) in
             switch result {
             case .failure(let error):
-                self?.showAlert(title: "Error uploading photo", message: "\(error.localizedDescription)")
+                self?.showAlert(title: "Error !!", message: "Error in uploading your profile picture: reson \(error.localizedDescription)")
             case .success(let url):
                 let request = Auth.auth().currentUser?.createProfileChangeRequest()
                 

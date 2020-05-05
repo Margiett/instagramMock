@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
                 }
             case .success:
                 DispatchQueue.main.async {
-                    UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "MainTabBarController")
+                    UIViewController.showViewController(storyBoardName: "Main", viewControllerId: "MainTabBarController")
                 }
             }
         }

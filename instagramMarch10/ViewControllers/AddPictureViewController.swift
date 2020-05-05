@@ -56,7 +56,7 @@ extension AddPictureViewController: UIImagePickerControllerDelegate, UINavigatio
         }
         dismiss(animated: true, completion: nil)
         
-        let appView = UIStoryboard(name: "MainView", bundle: nil)
+        let appView = UIStoryboard(name: "Main", bundle: nil)
         let sharedVC = appView.instantiateViewController(identifier: "ShareViewController") { (coder) in
         return ShareViewController(coder: coder, selectedImage: image)
             
