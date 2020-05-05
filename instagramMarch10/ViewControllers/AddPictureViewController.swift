@@ -29,8 +29,6 @@ class AddPictureViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
   
     @IBAction func picLibraryButtonPressed(_ sender: UIButton) {
@@ -50,6 +48,7 @@ class AddPictureViewController: UIViewController {
 }
 
 extension AddPictureViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             return
@@ -57,9 +56,11 @@ extension AddPictureViewController: UIImagePickerControllerDelegate, UINavigatio
         dismiss(animated: true, completion: nil)
         
         let appView = UIStoryboard(name: "Main", bundle: nil)
-        let sharedVC = appView.instantiateViewController(identifier: "ShareViewController") { (coder) in
+        let sharedVC = appView.instantiateViewController(identifier:"ShareViewController") { (coder) in
         return ShareViewController(coder: coder, selectedImage: image)
             
         }
+        sharedVC.modalPresentationStyle = .fullScreen
+        present(UINavigationController(rootViewController: sharedVC), animated: true)
     }
 }
