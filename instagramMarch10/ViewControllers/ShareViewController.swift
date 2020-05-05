@@ -43,8 +43,20 @@ class ShareViewController: UIViewController {
             print("testing share button was pressed ")
             return
         }
+        let resizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: uploadPhoto.bounds)
+        
+        db.createPost(caption: caption) { (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Error creating item", message: error.localizedDescription)
+                }
+            case.success(let post):
+                self.u
+            }
+        }
     }
-
+private func uploadingPicture(im)
     
 
 }
