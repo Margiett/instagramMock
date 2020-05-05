@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         if let _ = Auth.auth().currentUser {
-            UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "MainTabBarController")
+            UIViewController.showViewController(storyBoardName: "Main", viewControllerId: "MainTabBarController")
         } else {
             UIViewController.showViewController(storyBoardName: "Login", viewControllerId: "LoginViewController")
         }

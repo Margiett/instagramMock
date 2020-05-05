@@ -134,6 +134,9 @@
                                 <state key="normal" title="Sign up ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpButtonPressed:" destination="3sk-4X-PcA" eventType="touchUpInside" id="Bgh-C3-wf7"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2020-03-10 at 4.10.12 PM" translatesAutoresizingMaskIntoConstraints="NO" id="qTz-wb-IQj">
                                 <rect key="frame" x="20" y="509" width="374" height="128"/>
@@ -158,7 +161,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
-                                    <action selector="logInButtonPressed:" destination="3sk-4X-PcA" eventType="touchUpInside" id="rqV-aq-tbx"/>
+                                    <action selector="longInPressed:" destination="3sk-4X-PcA" eventType="touchUpInside" id="T0C-Vy-8mj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -192,7 +195,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="LhI-oc-Mgb" id="TyS-rx-s3q"/>
                         <outlet property="passwordTextField" destination="jPt-tM-pGJ" id="P82-29-vjl"/>
-                        <outlet property="signUpButton" destination="egb-oT-LkR" id="FWz-Ys-M6h"/>
+                        <outlet property="signUpButton" destination="egb-oT-LkR" id="iiB-lt-XfF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAD-hb-zJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

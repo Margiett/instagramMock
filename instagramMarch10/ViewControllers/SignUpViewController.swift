@@ -24,9 +24,13 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    @IBAction func logInButtonPressed(_ sender: Any) {
+    
+    @IBAction func longInPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func signUpButtonPressed(_ sender: UIButton) {
         guard let email = emailTextField.text, !email.isEmpty,
             let password = passwordTextField.text, !password.isEmpty
             else {
@@ -41,7 +45,7 @@ class SignUpViewController: UIViewController {
                 }
             case .success:
                 DispatchQueue.main.async {
-                    UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "MainTabBarController")
+                    UIViewController.showViewController(storyBoardName: "Main", viewControllerId: "MainTabBarController")
                 }
             }
         }
