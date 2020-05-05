@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add Picture View Controller-->
         <scene sceneID="pPV-xg-4av">
             <objects>
-                <viewController id="Rs1-Io-RjU" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPictureViewController" id="Rs1-Io-RjU" customClass="AddPictureViewController" customModule="instagramMarch10" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7sU-xI-pwZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,6 +41,9 @@
                                 <state key="normal" title="Photo Library">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="picLibraryButtonPressed:" destination="Rs1-Io-RjU" eventType="touchUpInside" id="BXH-a9-5id"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgx-bH-cw2">
                                 <rect key="frame" x="78" y="499" width="250" height="30"/>
@@ -49,21 +52,28 @@
                                 <state key="normal" title="Camera">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="cameraButtonPressed:" destination="Rs1-Io-RjU" eventType="touchUpInside" id="jVc-hP-qwc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hfS-aa-TSl"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="plus.rectangle.fill" catalog="system" id="vsj-RN-XgG"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="Dgx-bH-cw2" id="hdY-65-hUd"/>
+                        <outlet property="pictureLibraryButton" destination="XbP-Az-xuw" id="xaS-bw-Lkd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Jc-s2-JsW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="824.63768115942037" y="367.63392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Share View Controller-->
         <scene sceneID="pFi-XV-KfR">
             <objects>
-                <viewController id="UNt-yx-spR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShareViewController" id="UNt-yx-spR" customClass="ShareViewController" customModule="instagramMarch10" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ao4-Fx-r2p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,8 +103,16 @@
                     <navigationItem key="navigationItem" id="PP2-rl-nHa">
                         <barButtonItem key="rightBarButtonItem" title="Share" id="YFh-Lw-zgF">
                             <color key="tintColor" red="0.78993426209999995" green="0.54985234540000005" blue="0.84585169959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="UNt-yx-spR" id="X5g-rp-upi"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="captionLabel" destination="Vue-Bb-q5s" id="R4B-WN-IQ0"/>
+                        <outlet property="uploadPhoto" destination="8i8-tG-09k" id="6xT-IZ-fya"/>
+                        <outlet property="writeCaptionText" destination="OZF-yr-v2U" id="kf9-9G-Cok"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQ3-MZ-EGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -249,10 +267,10 @@
             </objects>
             <point key="canvasLocation" x="1599" y="384"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="aDI-qs-3dY">
             <objects>
-                <viewController id="yCX-qV-hhp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" id="yCX-qV-hhp" customClass="Profile" customModule="instagramMarch10" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="noe-76-gEa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -312,15 +330,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="lwh-lf-kKo" id="w3a-6g-F8j"/>
+                        <outlet property="editProfileButton" destination="3ZE-xd-udb" id="3ww-h9-oCD"/>
+                        <outlet property="userImageView" destination="V4h-hd-phb" id="Idd-fQ-gtR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3R-wb-Ma8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1598.5507246376812" y="1072.7678571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Profile View Controller-->
         <scene sceneID="9ft-dk-sWL">
             <objects>
-                <viewController id="h73-Ng-MLE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileViewController" id="h73-Ng-MLE" customClass="EditProfileViewController" customModule="instagramMarch10" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AxM-Wy-6eS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -337,6 +360,9 @@
                                 <state key="normal" title="Change Profile Photo">
                                     <color key="titleColor" red="0.78993426209999995" green="0.54985234540000005" blue="0.84585169959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="changePhotoButtonPressed:" destination="h73-Ng-MLE" eventType="touchUpInside" id="rr7-gI-mR1"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTf-UE-B19">
                                 <rect key="frame" x="20" y="452" width="104" height="33"/>
@@ -395,10 +421,24 @@
                         <viewLayoutGuide key="safeArea" id="u1b-Wc-XX9"/>
                     </view>
                     <navigationItem key="navigationItem" id="tiC-O6-CaK">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="B4t-ad-FMK">
+                            <color key="tintColor" red="0.78993426209999995" green="0.54985234540000005" blue="0.84585169959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="h73-Ng-MLE" id="Gv3-Rw-dzw"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="Cyb-LY-e1Z">
                             <color key="tintColor" red="0.78993426209999995" green="0.54985234540000005" blue="0.84585169959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="doneEditing:" destination="h73-Ng-MLE" id="sY8-IX-GV8"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailText" destination="DXD-WQ-sUS" id="79M-Ho-3qD"/>
+                        <outlet property="profilePicture" destination="VVN-bi-mIg" id="ZS0-XY-xmd"/>
+                        <outlet property="username" destination="KRw-yT-Wwy" id="AUn-Yp-mg2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Jx-yE-RNc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

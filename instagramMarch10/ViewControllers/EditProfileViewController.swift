@@ -74,7 +74,7 @@ class EditProfileViewController: UIViewController {
         present(alertController, animated: true)
     }
     
-    @IBAction func doneEditing(_ sender: Any) {
+    @IBAction func doneEditing(_ sender: UIBarButtonItem) {
         guard let selectedImage = selectedImage else {
             return
         }
