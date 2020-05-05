@@ -30,21 +30,20 @@ class Profile: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
         guard let user = Auth.auth().currentUser else {
             return
         }
         listener = Firestore.firestore().collection(DatabaseService.postCollecion).addSnapshotListener({ [weak self] (snapshot, error) in
             if let error = error {
                 DispatchQueue.main.async {
-                    self?.showAlert(title: "Try again later", message: "\(error.localizedDescription)")
+                    self?.showAlert(title: "Please try again later", message: "\(error.localizedDescription)")
                 }
             } else if let snapshot = snapshot {
-                let posts = snapshot.documents.map { Post($0.data()) }
-                self?.userPost = posts.filter({ $0.userId == user.uid }
+                let post = snapshot.documents.map { Post($0.data())}
+                self?.userPost = post.filter { $0.userId == user.uid }
             }
         })
-    }
+    } //MARK: End of curly for view did Appear
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
@@ -57,8 +56,7 @@ class Profile: UIViewController {
         view.backgroundColor = .systemBackground
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        // Do any additional setup after loading the view.
+       loadUserInfo()
     }
     
     private func loadUserInfo(){
@@ -73,8 +71,25 @@ class Profile: UIViewController {
         }
     }
     
+    @IBAction func signOutPressedButton(_ sender: UIBarButtonItem) {
+        
+        showOptionsAlert(title: nil, message: "Are you sure you want to leave us ?") {
+            (alerAction) in
+            if alerAction.title == "Yes I am sure" {
+                do {
+                    try Auth.auth().signOut()
+                    UIViewController.showViewController(storyBoardName: "Login", viewControllerId: "LoginViewController")
+                } catch {
+                    self.showAlert(title: "Error signing out", message: "\(error.localizedDescription)")
+                }
+                
+            }
+        }
+    }
+    
     
 }
+
 
 extension Profile: UICollectionViewDataSource {
   
@@ -102,5 +117,11 @@ extension Profile: UICollectionViewDelegateFlowLayout {
         let totalSpacing: CGFloat = numberOfItems * interItemSpacing
         let itemWidth: CGFloat = (maxWidth - totalSpacing)/numberOfItems
         return CGSize(width: itemWidth, height: itemWidth)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
     }
 }
