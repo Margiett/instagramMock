@@ -61,16 +61,18 @@ class Profile: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    private func loadUserInfo(){
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        if let photoURL = user.photoURL {
+            userImageView.kf.setImage(with: photoURL)
+        }
+        if let username = user.displayName {
+            navigationItem.title = username
+        }
+    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 
