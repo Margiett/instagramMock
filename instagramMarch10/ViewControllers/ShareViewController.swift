@@ -19,7 +19,7 @@ class ShareViewController: UIViewController {
     private var selectedImage: UIImage
     private let db = DatabaseService()
     private let storageService = StorageService()
-    private let database = Firestore.firestore()
+    private let fireStore = Firestore.firestore()
     
     init?(coder: NSCoder, selectedImage: UIImage) {
         self.selectedImage = selectedImage
@@ -45,18 +45,44 @@ class ShareViewController: UIViewController {
         }
         let resizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: uploadPhoto.bounds)
         
-        db.createPost(caption: caption) { (result) in
+        db.createPost(caption: caption) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.showAlert(title: "Error creating item", message: error.localizedDescription)
+                    self?.showAlert(title: "Error creating item", message: error.localizedDescription)
                 }
             case.success(let post):
-                self.u
+                self?.uploadingPicture(image: resizedImage, postId: postId)
             }
         }
     }
-private func uploadingPicture(im)
+    private func uploadingPicture(image: UIImage, postId: String) {
+        
+        storageService.uploadPhoto(postId: postId, image: image) { (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Error uploading photos", message: "\(error.localizedDescription)")
+                }
+            case.success(let url):
+                self.updateImageURL(url, postId: postId)
+            }
+        }
+    }
+    private func updateImageURL(_ url: URL, postId: String) {
+        fireStore.collection(DatabaseService.postCollecion).document(postId).updateData(["imageURL": url.absoluteString]) { [weak self] (error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "failed to update post image", message: "\(error.localizedDescription)")
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self?.dismiss(animated: true)
+                    }
+                }
+            }
+            
+        }
+    }
     
 
-}
