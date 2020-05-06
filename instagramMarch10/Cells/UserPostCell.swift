@@ -15,6 +15,7 @@ class UserPostCell: UICollectionViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     
     public func configureCell(post: Post) {
+        postImageView.kf.setImage(with: URL(string: post.imageURL))
         
     }
     

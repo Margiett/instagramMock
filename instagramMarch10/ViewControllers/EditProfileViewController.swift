@@ -14,6 +14,8 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var emailText: UITextField!
+   // @IBOutlet weak var bio: UITextField!
+    // @IBOutlet weak var phoneNumber: UITextField!
     
     
     private let storageService = StorageService()
@@ -37,7 +39,7 @@ class EditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       loadUserInfo()
     }
     
     private func loadUserInfo(){
@@ -55,6 +57,8 @@ class EditProfileViewController: UIViewController {
     
     @IBAction func changePhotoButtonPressed(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Change Profile Photo", message: nil, preferredStyle: .actionSheet)
+        
+        
         let cameraAction = UIAlertAction(title: "Take Photo", style: .default) { alertAction in
             self.imagePickerController.sourceType = .camera
             self.present(self.imagePickerController, animated: true)

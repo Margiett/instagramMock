@@ -65,14 +65,14 @@ class ShareViewController: UIViewController {
 
     private func uploadingPicture(image: UIImage, postId: String) {
         
-        storageService.uploadPhoto(postId: postId, image: image) { (result) in
+        storageService.uploadPhoto(postId: postId, image: image) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.showAlert(title: "Error uploading photos", message: "\(error.localizedDescription)")
+                    self?.showAlert(title: "Error uploading photos", message: "\(error.localizedDescription)")
                 }
             case.success(let url):
-                self.updateImageURL(url, postId: postId)
+                self?.updateImageURL(url, postId: postId)
             }
         }
     }

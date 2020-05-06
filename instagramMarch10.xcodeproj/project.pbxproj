@@ -154,7 +154,7 @@
 				9FF401A7245B9BE60070C0BF /* FirebaseService */,
 				9FF4019E245B92DA0070C0BF /* Extensions */,
 				9FF4019B245B90D30070C0BF /* Model */,
-				9FF40198245B8FF20070C0BF /* Views */,
+				9FF40198245B8FF20070C0BF /* Cells */,
 				9F4763DA2418188E006FC91B /* AppDelegate.swift */,
 				9F4763DC2418188E006FC91B /* SceneDelegate.swift */,
 				9F4763E324181891006FC91B /* Assets.xcassets */,
@@ -173,14 +173,14 @@
 			path = instagramMarch10Tests;
 			sourceTree = "<group>";
 		};
-		9FF40198245B8FF20070C0BF /* Views */ = {
+		9FF40198245B8FF20070C0BF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				9FF40199245B90230070C0BF /* UserPostCell.swift */,
 				9FF401AC245CA05F0070C0BF /* FeedCell.swift */,
 				9FF401AE245CA2230070C0BF /* EmptyView.swift */,
 			);
-			path = Views;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9FF4019B245B90D30070C0BF /* Model */ = {

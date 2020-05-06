@@ -137,7 +137,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ANN-NZ-HHa" userLabel="feedCollection">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="feedCell" id="ANN-NZ-HHa" userLabel="feedCollection" customClass="FeedCell" customModule="instagramMarch10" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rio-5w-YHY">
@@ -195,6 +195,13 @@
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="448"/>
+                                        <connections>
+                                            <outlet property="bottomUsernameLabel" destination="Kkz-Lw-AsV" id="CoF-Ss-5C3"/>
+                                            <outlet property="captionLabel" destination="xAt-yk-fj8" id="LKY-FI-AfK"/>
+                                            <outlet property="postedImage" destination="vho-3i-9kX" id="TOh-mL-yIe"/>
+                                            <outlet property="userImage" destination="2X9-G2-fqZ" id="GDJ-Gb-crH"/>
+                                            <outlet property="usernameLabel" destination="gZ8-T9-L0V" id="lQT-E4-n9R"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -302,7 +309,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oqA-zE-Pfx">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCell" id="oqA-zE-Pfx" customClass="UserPostCell" customModule="instagramMarch10" customModuleProvider="target">
                                         <rect key="frame" x="103.5" y="0.0" width="207" height="190"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qvv-3i-aQk">
@@ -317,6 +324,9 @@
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="207" height="190"/>
+                                        <connections>
+                                            <outlet property="postImageView" destination="2o3-dx-Z4E" id="4gR-ND-Iyi"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

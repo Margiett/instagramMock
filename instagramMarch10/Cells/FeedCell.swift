@@ -24,6 +24,7 @@ class FeedCell: UICollectionViewCell {
         usernameLabel.text = post.userName
         postedImage.kf.setImage(with: URL(string: post.imageURL))
         bottomUsernameLabel.text = "@\(post.userName)"
+        captionLabel.text = post.caption
     }
     
 }
