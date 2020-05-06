@@ -23,7 +23,8 @@ class FeedCell: UICollectionViewCell {
     }
     public func configureCell(post: Post) {
         
-        if let user = Auth.auth().currentUser, let displayName = user.displayName {
+        if let user = Auth.auth().currentUser,
+            let displayName = user.displayName {
             userImage.kf.setImage(with: user.photoURL)
             usernameLabel.text = displayName
             bottomUsernameLabel.text = displayName

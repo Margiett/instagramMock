@@ -100,7 +100,6 @@ class EditProfileViewController: UIViewController {
     
     @IBAction func doneEditing(_ sender: UIBarButtonItem) {
       
-        
         guard let username = username.text, !username.isEmpty,
             let profilePic = selectedImage,
             let userBio = bio.text, !userBio.isEmpty,
@@ -150,11 +149,14 @@ class EditProfileViewController: UIViewController {
                         }
                     } else {
                         DispatchQueue.main.async {
-                            self?.showAlert(title: "Profile change", message: "Your profile was successfully created ")
+                            self?.showAlert(title: "Profile change", message: "Your profile was successfully updated ")
                         }
+                        //MARK: Why is not seguing to profile vc !!!!!!!!!!!!!!!!!!!!!!
                         let profileVC = Profile()
                         profileVC.instaUser = self?.instaUserL
+                       
                         self?.navigationController?.pushViewController(profileVC, animated: true)
+                         
                     }
                 })
             }
@@ -163,6 +165,8 @@ class EditProfileViewController: UIViewController {
     
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+        
        let profileVC = Profile()
         navigationController?.pushViewController(profileVC, animated: true)
     }

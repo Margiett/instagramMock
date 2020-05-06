@@ -52,8 +52,9 @@ class HomePageViewController: UIViewController {
                  }
              } else if let snapshot = snapshot {
                 print("there are \(snapshot.documents.count) in the feed")
-                 let posts = snapshot.documents.map { Post($0.data()) }
-                 self?.feed = posts
+                let posts = snapshot.documents.map { Post($0.data()) }
+               
+                self?.feed = posts
                  }
              })
          }
@@ -90,4 +91,9 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
         let maxSize = UIScreen.main.bounds
         return CGSize(width: maxSize.width, height: maxSize.height * 0.70)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
 }
