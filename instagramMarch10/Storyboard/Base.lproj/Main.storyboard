@@ -131,30 +131,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jyt-3g-woI">
-                                    <size key="itemSize" width="414" height="448"/>
+                                    <size key="itemSize" width="414" height="548"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="feedCell" id="ANN-NZ-HHa" userLabel="feedCollection" customClass="FeedCell" customModule="instagramMarch10" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="548"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rio-5w-YHY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="548"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2020-04-30 at 1.32.18 PM" translatesAutoresizingMaskIntoConstraints="NO" id="2X9-G2-fqZ">
-                                                    <rect key="frame" x="8" y="43" width="134" height="105"/>
+                                                    <rect key="frame" x="8" y="43" width="101" height="86"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZ8-T9-L0V">
-                                                    <rect key="frame" x="150" y="73" width="256" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                                    <color key="textColor" red="0.78993426209999995" green="0.54985234540000005" blue="0.84585169959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vho-3i-9kX">
                                                     <rect key="frame" x="8" y="156" width="398" height="205"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -192,9 +185,16 @@
                                                     <color key="tintColor" red="0.78993426209999995" green="0.54985234540000005" blue="0.84585169959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <state key="normal" image="paperplane" catalog="system"/>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZ8-T9-L0V">
+                                                    <rect key="frame" x="117" y="64" width="256" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                    <color key="textColor" red="0.78993426209999995" green="0.54985234540000005" blue="0.84585169959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="414" height="448"/>
+                                        <size key="customSize" width="414" height="548"/>
                                         <connections>
                                             <outlet property="bottomUsernameLabel" destination="Kkz-Lw-AsV" id="CoF-Ss-5C3"/>
                                             <outlet property="captionLabel" destination="xAt-yk-fj8" id="LKY-FI-AfK"/>
@@ -337,6 +337,9 @@
                     <navigationItem key="navigationItem" id="ZDw-dF-VaG">
                         <barButtonItem key="rightBarButtonItem" title="Sign Out" id="dvt-Ta-wBb">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="signOutPressedButton:" destination="yCX-qV-hhp" id="Wbw-2a-R3Y"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -445,7 +448,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bio" destination="EsF-9Z-rQl" id="Hzf-ii-7mh"/>
+                        <outlet property="doneButton" destination="Cyb-LY-e1Z" id="bnc-gS-6Ps"/>
                         <outlet property="emailText" destination="DXD-WQ-sUS" id="79M-Ho-3qD"/>
+                        <outlet property="phoneNumber" destination="hEi-gv-JWM" id="NOw-dz-ub2"/>
                         <outlet property="profilePicture" destination="VVN-bi-mIg" id="ZS0-XY-xmd"/>
                         <outlet property="username" destination="KRw-yT-Wwy" id="AUn-Yp-mg2"/>
                     </connections>

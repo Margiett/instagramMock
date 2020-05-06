@@ -8,17 +8,25 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 import Kingfisher
 
 class EditProfileViewController: UIViewController {
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var emailText: UITextField!
-   // @IBOutlet weak var bio: UITextField!
-    // @IBOutlet weak var phoneNumber: UITextField!
+   @IBOutlet weak var bio: UITextField!
+  @IBOutlet weak var phoneNumber: UITextField!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     
     private let storageService = StorageService()
+    
+    public var instaUserL: UserModel?
+    public var selectedUser: User!
+    
+    private let dataService = DatabaseService()
+    private let fireBase = Firestore.firestore()
     
     private lazy var imagePickerController: UIImagePickerController = {
         let imagePicker = UIImagePickerController()
@@ -28,7 +36,11 @@ class EditProfileViewController: UIViewController {
     
     private var selectedImage: UIImage? {
         didSet {
-            profilePicture.image = selectedImage
+            DispatchQueue.main.async {
+                self.profilePicture.image = self.selectedImage
+               
+            }
+            
         }
     }
     
@@ -38,24 +50,32 @@ class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
        loadUserInfo()
     }
     
     private func loadUserInfo(){
+        
         guard let user = Auth.auth().currentUser else {
             return
         }
+    
         if let photoURL = user.photoURL {
             profilePicture.kf.setImage(with: photoURL)
         }
         selectedImage = profilePicture.image
-        if let email = user.displayName {
-            username.text = email
+        
+        if let userName = user.displayName {
+            username.text = userName
+        }
+        if let userEmail = user.email {
+            emailText.text = userEmail
+            emailText.isUserInteractionEnabled = false
         }
     }
     
     @IBAction func changePhotoButtonPressed(_ sender: UIButton) {
+        
+        
         let alertController = UIAlertController(title: "Change Profile Photo", message: nil, preferredStyle: .actionSheet)
         
         
@@ -63,7 +83,7 @@ class EditProfileViewController: UIViewController {
             self.imagePickerController.sourceType = .camera
             self.present(self.imagePickerController, animated: true)
         }
-        let photoLibraryAction = UIAlertAction(title: "Choose from Library", style: .default) { alertController in
+        let photoLibraryAction = UIAlertAction(title: "Choose from Library", style: .default) { actionAlert in
             self.imagePickerController.sourceType = .photoLibrary
             self.present(self.imagePickerController, animated: true)
         }
@@ -79,18 +99,43 @@ class EditProfileViewController: UIViewController {
     }
     
     @IBAction func doneEditing(_ sender: UIBarButtonItem) {
-        guard let selectedImage = selectedImage else {
-            return
+      
+        
+        guard let username = username.text, !username.isEmpty,
+            let profilePic = selectedImage,
+            let userBio = bio.text, !userBio.isEmpty,
+            let userPhoneNum = phoneNumber.text, !userPhoneNum.isEmpty else {
+                showAlert(title: "Missing Fields", message: "All fields are required to contiune")
+                return
         }
+      
         guard let user = Auth.auth().currentUser else { return }
         
-        let resizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: profilePicture.bounds)
+          let resizedImage = UIImage.resizeImage(originalImage: profilePic, rect: profilePicture.bounds)
+        
+        instaUserL = UserModel(username: username, userBio: userBio, userId: user.uid, userEmail: user.email ?? "")
+        dataService.createUser(username: username, userBio: userBio, userId: user.uid, userEmail: user.email ?? "") { (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showAlert(title: "unable to save profile pic", message: "\(error.localizedDescription)")
+                }
+            case .success(let documentID):
+                Firestore.firestore().collection(DatabaseService.userCollection).document(documentID).updateData(["username": username, "userBio": userBio])
+                
+                
+            }
+        }
+     
         
         storageService.uploadPhoto(userId: user.uid, image: resizedImage) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 self?.showAlert(title: "Error !!", message: "Error in uploading your profile picture: reson \(error.localizedDescription)")
+           
+            
             case .success(let url):
+                self?.showAlert(title: "Success", message: "Your Profile picture have been uploaded")
                 let request = Auth.auth().currentUser?.createProfileChangeRequest()
                 
                 if let userName = self?.username.text, !userName.isEmpty {
@@ -107,18 +152,29 @@ class EditProfileViewController: UIViewController {
                         DispatchQueue.main.async {
                             self?.showAlert(title: "Profile change", message: "Your profile was successfully created ")
                         }
+                        let profileVC = Profile()
+                        profileVC.instaUser = self?.instaUserL
+                        self?.navigationController?.pushViewController(profileVC, animated: true)
                     }
                 })
             }
         }
     }
     
+    
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+       let profileVC = Profile()
+        navigationController?.pushViewController(profileVC, animated: true)
     }
    
 }
 
+extension EditProfileViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
 extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {

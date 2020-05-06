@@ -10,6 +10,7 @@ import Foundation
 
 struct Post {
     let imageURL: String
+   
     let caption: String
     let userId: String
     let userName: String
@@ -19,6 +20,7 @@ struct Post {
 extension Post {
     init(_ dictionary: [String: Any]) {
         self.imageURL = dictionary["imageURL"] as? String ?? "no image"
+     
         self.caption = dictionary["caption"] as? String ?? "No caption"
         self.userId = dictionary["userId"] as? String ?? "no user id"
         self.userName = dictionary["userName"] as? String ?? "no user name"

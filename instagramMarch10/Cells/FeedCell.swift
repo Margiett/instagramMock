@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import FirebaseAuth
 
 class FeedCell: UICollectionViewCell {
     
@@ -21,10 +22,21 @@ class FeedCell: UICollectionViewCell {
         userImage.layer.cornerRadius = userImage.frame.width/2
     }
     public func configureCell(post: Post) {
-        usernameLabel.text = post.userName
+        
+        if let user = Auth.auth().currentUser, let displayName = user.displayName {
+            userImage.kf.setImage(with: user.photoURL)
+            usernameLabel.text = displayName
+            bottomUsernameLabel.text = displayName
+        } else {
+            userImage.image = UIImage(systemName: "person.fill")
+            userImage.image?.withTintColor(.gray)
+            usernameLabel.text = post.userName
+            bottomUsernameLabel.text = "@\(post.userName)"
+        }
         postedImage.kf.setImage(with: URL(string: post.imageURL))
-        bottomUsernameLabel.text = "@\(post.userName)"
         captionLabel.text = post.caption
+        
+
     }
     
 }

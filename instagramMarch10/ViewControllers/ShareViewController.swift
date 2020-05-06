@@ -36,6 +36,7 @@ class ShareViewController: UIViewController {
     
     //MARK: Share Button needs to fix this error
     @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
+       
         guard let caption = writeCaptionText.text, !caption.isEmpty else {
             captionLabel.textColor = .red
             captionLabel.text = "A caption is required in order to post"
@@ -44,14 +45,14 @@ class ShareViewController: UIViewController {
         
         let reSizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: uploadPhoto.bounds)
         
-        db.createPost(caption: caption) { (result) in
+        db.createPost(caption: caption) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.showAlert(title: "Error creating item", message: error.localizedDescription)
+                    self?.showAlert(title: "Error creating item", message: error.localizedDescription)
                 }
             case .success(let postId):
-                self.uploadingPicture(image: reSizedImage, postId: postId)
+                self?.uploadingPicture(image: reSizedImage, postId: postId)
             }
         }
         
@@ -77,12 +78,15 @@ class ShareViewController: UIViewController {
         }
     }
     private func updateImageURL(_ url: URL, postId: String) {
+        
         fireStore.collection(DatabaseService.postCollecion).document(postId).updateData(["imageURL": url.absoluteString]) { [weak self] (error) in
+           
             if let error = error {
                 DispatchQueue.main.async {
                     self?.showAlert(title: "failed to update post image", message: "\(error.localizedDescription)")
                 }
             } else {
+                print("testing to see if this worked !!!!!")
                 DispatchQueue.main.async {
                     self?.dismiss(animated: true)
                     }

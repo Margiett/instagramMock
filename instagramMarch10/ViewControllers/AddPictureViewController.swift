@@ -22,8 +22,8 @@ class AddPictureViewController: UIViewController {
     }()
     
     override func viewDidLayoutSubviews() {
-        pictureLibraryButton.layer.cornerRadius = 8
-        cameraButton.layer.cornerRadius = 8
+        pictureLibraryButton.layer.cornerRadius = 6
+        cameraButton.layer.cornerRadius = 6
     }
     
 
@@ -37,6 +37,7 @@ class AddPictureViewController: UIViewController {
     }
     
     @IBAction func cameraButtonPressed(_ sender: UIButton) {
+       
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             self.imagePickerController.sourceType = .camera
             self.present(self.imagePickerController, animated: true)
@@ -50,6 +51,7 @@ class AddPictureViewController: UIViewController {
 extension AddPictureViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             return
         }

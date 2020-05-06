@@ -13,18 +13,8 @@ import FirebaseStorage
 
 
 class StorageService {
-    // in our app we will be uploading a photo in 2 places
-    // 1. profile vc
-    // 2. post VC
-    
-    // we will be creating 2 different buckets of folders
-    // 1. UserProfilePhotos
-    // 2. PostPhotos
-    
-    // our signature will be taking in a userID or a postID
-    
-    // reference to the Firebase storage
-    
+ 
+    // lets create a reference to the Firebase storage
     private let storageRef = Storage.storage().reference()
     
     // image -> resize selected image (for storage purposes) -> convert to data -> pass to firebase (uploadData)
