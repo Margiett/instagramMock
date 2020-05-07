@@ -50,10 +50,10 @@ class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       loadUserInfo()
+       updateUI()
     }
     
-    private func loadUserInfo(){
+    private func updateUI(){
         
         guard let user = Auth.auth().currentUser else {
             return
@@ -123,6 +123,7 @@ class EditProfileViewController: UIViewController {
                 Firestore.firestore().collection(DatabaseService.userCollection).document(documentID).updateData(["username": username, "userBio": userBio])
                 
                 
+                
             }
         }
      
@@ -150,17 +151,19 @@ class EditProfileViewController: UIViewController {
                     } else {
                         DispatchQueue.main.async {
                             self?.showAlert(title: "Profile change", message: "Your profile was successfully updated ")
+                            self?.updateUI()
                         }
                         //MARK: Why is not seguing to profile vc !!!!!!!!!!!!!!!!!!!!!!
-                        let profileVC = Profile()
-                        profileVC.instaUser = self?.instaUserL
-                       
-                        self?.navigationController?.pushViewController(profileVC, animated: true)
+//                        let profileVC = Profile()
+//                        profileVC.instaUser = self?.instaUserL
+//
+//                        self?.navigationController?.pushViewController(profileVC, animated: true)
                          
                     }
                 })
             }
         }
+        dismiss(animated: true, completion: nil)
     }
     
     

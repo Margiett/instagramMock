@@ -54,6 +54,7 @@ class Profile: UIViewController {
                 self?.userPost = post.filter { $0.userId == user.uid }
             }
         })
+        loadUserInfo()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
